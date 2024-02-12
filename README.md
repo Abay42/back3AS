@@ -18,15 +18,23 @@ The admins: abay(password: 1313), admin(password: 8888)
   
   
 ## Dependencies
+
 Express
+
 Axios
+
 Mongoose
+
 Body-parser
+
 Cookie-parser
+
 EJS
+
 JWT (jsonwebtoken)
 
 ## Usage
+
 Sign up or log in to access personalized features.
 Enter a city name to check the weather.
 Explore news related to the city or NASA data.
