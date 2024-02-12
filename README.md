@@ -7,7 +7,6 @@ The admins: abay(password: 1313), admin(password: 8888)
 - [Features](#features)
 - [Usage](#usage)
 - [Dependencies](#dependencies)
-- [Configuration](#configuration)
 
 ## Features
 
