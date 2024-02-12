@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+      <form action="/weather" method="get">
+        <input type="text" name="city" placeholder="Enter city name" />
+        <button type="submit">Get Weather</button>
+      </form>
+      <% if (error) { %>
+      <p class="error"><%= error %></p>
+      <% } else if (weather) { %>
+      <div class="card">
+        <p>
+          <i class="fas fa-thermometer-half"></i>
+          <%=weather.main.temp%>&deg;C (Feels Like: <%=weather.main.feels_like%>&deg;C)
+    </p>
+        </p>
+        <p>
+          <i class="fas fa-cloud"></i>
+          <%=weather.weather[0].main%>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <%=weather.name%>, <%=weather.sys.country%>
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <%=weather.coord.lat%>, <%=weather.coord.lon%>
+      </p>
+      <p>
+          <i class="fas fa-tint"></i>
+          <%=weather.main.humidity%>%
+      </p>
+      <i class="fas fa-compress"></i>
+      <%=weather.main.pressure%> hPa
+  </p>
+    <p>
+      <i class="fas fa-wind"></i>
+      <%=weather.wind.speed%> m/s
+  </p>
+    <p>
+      <p>
+          <i class="fas fa-info-circle"></i>
+          <%=weather.weather[0].description%>
+      </p>
+      </div>
+      <% } %>
+      <% if (weather) { %>
+        <h2>Weather information</h2>
+        <p>City that been searched: <%= weather.name %></p>
+        <p>Temperature that was shown: <%= weather.main.temp %>°C</p>
+      <% } %>
+      <form action="/news" method="get">
+        <button type="submit">View News</button>
+      </form>
+      <form action="/nasa" method="get">
+        <button type="submit">Check NASA</button>
+      </form>
+      <form action="/history" method="get">
+        <button type="submit">My history</button>
+      </form>
+      <footer>
+        <p>Created by Abay Dyussembayev</p>
+        <p>Group: SE - 2207</p>
+      </footer>
+    </div>
+  </body>
+</html>

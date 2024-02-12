@@ -1,0 +1,8 @@
+<h1>Welcome <%= user.username %> (Admin)</h1>
+<link rel="stylesheet" href="/style.css"> 
+<h2>Manage Users</h2>
+<ul>
+  <% users.forEach(user => { %>
+    <li><%= user.username %> (<%= user.creationDate %>) <a href="/admin/users/<%= user._id %>/edit">Edit</a> | <a href="/admin/users/<%= user._id %>/delete">Delete</a></li>
+  <% }); %>
+</ul>

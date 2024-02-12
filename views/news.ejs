@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>News</title> 
+    <link rel="stylesheet" href="/style.css"> 
+</head> 
+<body> 
+    <nav class="top-nav"> 
+        <a href="/" id="home-link">Home</a> 
+        <a href="/weather" id="weather-link">Weather API</a>  
+        <a href="/nasa" id="nasa-link">NASA API</a> 
+    </nav> 
+    <div id="search-container"> 
+        <form id="search-form" method="post">  
+        <label for="search">Search:</label> 
+        <input type="text" id="search" name="city" placeholder="Enter your city" required> 
+        <input type="submit" value="Get News"> 
+    </form> 
+    </div> 
+    <h1>News</h1> 
+    <ul>
+        <% if (newsData && Array.isArray(newsData) && newsData.length > 0) { %>
+          <% newsData.slice(0, 7).forEach(article => { %>
+            <li>
+              <h2><%= article.title %></h2>
+              <p><%= article.description %></p>
+            </li>
+          <% }); %>
+        <% }
+        %>
+      </ul>
+</body> 
+</html>

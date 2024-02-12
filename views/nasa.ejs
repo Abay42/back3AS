@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA API</title>
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+</head>
+<body>
+    <nav class="top-nav"> 
+        <a href="/" id="home-link">Home</a> 
+        <a href="/weather" id="weather-link">Weather API</a>  
+        <a href="/news" id="news-link">News API</a>  
+    </nav> 
+  <div class="container">
+    <h1>NASA Celestial Bodies</h1>
+    <% if (celestialBodies && celestialBodies.length > 0) { %>
+      <% celestialBodies.forEach(body => { %>
+        <div class="card">
+          <h2><%= body.englishName %></h2>
+          <p>Type: <%= body.isPlanet ? 'Planet' : 'Non-planet celestial body' %></p>
+          <% if (body.mass && body.mass.massValue && body.mass.massExponent) { %>
+            <p>Mass: <%= body.mass.massValue %> x 10^<%= body.mass.massExponent %> kg</p>
+          <% } else { %>
+            <p>Mass: N/A</p>
+          <% } %>
+          <p>Radius: <%= body.meanRadius %> km</p>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No celestial bodies found.</p>
+    <% } %>
+    <a href="/">Back to Weather App</a>
+  </div>
+</body>
+</html>

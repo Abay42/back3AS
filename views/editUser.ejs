@@ -1,0 +1,7 @@
+<h1>Edit User</h1>
+<link rel="stylesheet" href="/style.css"> 
+<form action="/admin/users/<%= user._id %>/edit" method="post">
+  <input type="text" name="username" value="<%= user.username %>" required>
+  <input type="password" name="password" placeholder="New Password">
+  <button type="submit">Update User</button>
+</form>
